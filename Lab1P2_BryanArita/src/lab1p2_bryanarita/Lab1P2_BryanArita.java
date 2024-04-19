@@ -13,20 +13,24 @@ public class Lab1P2_BryanArita {
         for (int i = 0; i < fila; i++) {
             for (int j = 0; j < columna; j++) {
                 temp[i][j] = rndm.nextInt(10);
-            }
-        }
-        return temp;
-    }
-
-    public static void MatrizImpresa(int matriz[][]) {
-        int[][] temp = new int[matriz.length][matriz[0].length];
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[0].length; j++) {
                 System.out.print("[" + temp[i][j] + "] ");
             }
             System.out.println("");
         }
+        return temp;
     }
+
+public static int [][]BubbleSort(int [][]matriz){
+    int MatrizSort[][]=new int [matriz.length][matriz[0].length];
+    for (int i = 0; i < matriz.length; i++) {
+        for (int j = 0; j < matriz[0].length; j++) {
+            if (MatrizSort[i][j]>MatrizSort[i][j+1]){
+               
+            }
+        }
+    }   
+    return BubbleSort(MatrizSort);
+}
 
     public static void main(String[] args) {
         System.out.print("Ingrese tamano de la matriz: ");
@@ -37,8 +41,6 @@ public class Lab1P2_BryanArita {
             tamano = duki.nextInt();
         }
         int newMatriz[][] = MatrizGenerada(tamano, tamano);
-        MatrizImpresa(newMatriz);
-
     }
 
 }
