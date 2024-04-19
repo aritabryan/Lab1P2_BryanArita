@@ -23,43 +23,33 @@ public class Lab1P2_BryanArita {
         return temp;
     }
 
-//    public static void BubbleSort(int cont) {
-//        for (int i = 0; i < newMatriz.length; i++) {
-//            for (int j = 0; j < newMatriz[0].length; j++) {
-//                if (MatrizSort[i][j] > MatrizSort[i][j + 1]) {
-//                    int MatrizEspejo[][] = new int[i][j];
-//                    MatrizSort[i][j] = MatrizSort[i][j + 1];
-//                }
-//            }
-//        }
-//        return BubbleSort(MatrizSort);
-//    }
-//    public static void BubbleSort(int[][] matriz) {
-//        int MatrizSort[][] = new int[matriz.length][matriz.length];
-//        for (int i = 0; i < matriz.length; i++) {
-//            for (int j = 0; j < matriz.length; j++) {
-//                if (MatrizSort[i][j] > MatrizSort[i][j + 1]) {
-//                    int MatrizEspejo[][] = new int[i][j];
-//                    MatrizSort[i][j] = MatrizSort[i][j + 1];
-//                    System.out.println("[" + MatrizSort + "] ");
-//                }
-//            }
-//            System.out.println("");
-//        }
-//    }
-
-    public static void BubbleSort2(int [][]matriz, int cont) {
-        int espejo=0;
-        int espejo2=0;
-            for (int j = 0; j < newMatriz.length-1; j++) {
-                if (newMatriz[cont][j]==newMatriz[cont][j+1]){
-                    espejo=newMatriz[cont][j];
-                    espejo2=newMatriz[cont][j+1];
-                    newMatriz[cont][j+1]=espejo;
-                    newMatriz[cont][j+1]=espejo2;
+    public static int[][] BubbleSort(int[][] matriz, int cont) {
+        int espejo = 0;
+        int espejo2 = 0;
+        for (int i = 0; i < newMatriz.length - 1; i++) {
+            for (int j = 0; j < newMatriz[0].length - 1; j++) {
+                if (newMatriz[cont][j] == newMatriz[cont][j + 1]) {
+                    espejo = newMatriz[cont][j];
+                    espejo2 = newMatriz[cont][j + 1];
+                    newMatriz[cont][j + 1] = espejo;
+                    newMatriz[cont][j + 1] = espejo2;
                 }
+            }
         }
-            BubbleSort2(newMatriz, cont+1);
+        return BubbleSort(newMatriz, cont + 1);
+    }
+    
+    
+
+    public static void ImprimirBubble(int[][] matriz) {
+        int temp[][] = new int[matriz.length][matriz[0].length];
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                System.out.print("[" + temp[i][j] + "] ");
+            }
+            System.out.println("");
+        }
     }
 
     public static void CalculoMedianas(int matriz[][]) {
@@ -109,7 +99,7 @@ public class Lab1P2_BryanArita {
         System.out.println("\nMatriz generada:");
         newMatriz = MatrizGenerada(tamano, tamano);
         System.out.println("\nMatriz Ordenada:");
-        BubbleSort2(newMatriz);
+        ImprimirBubble(BubbleSort(newMatriz, 0));
         CalculoMedianas(newMatriz);
         System.out.println("\nCalculo de Medianas:");
         IMPArraylist(ArregloMedianas);
