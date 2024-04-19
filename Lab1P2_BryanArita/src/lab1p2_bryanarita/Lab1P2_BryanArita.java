@@ -23,10 +23,9 @@ public class Lab1P2_BryanArita {
         return temp;
     }
 
-//    public static int[][] BubbleSort(int[][] matriz) {
-//        int MatrizSort[][] = new int[matriz.length][matriz[0].length];
-//        for (int i = 0; i < matriz.length; i++) {
-//            for (int j = 0; j < matriz[0].length; j++) {
+//    public static void BubbleSort(int cont) {
+//        for (int i = 0; i < newMatriz.length; i++) {
+//            for (int j = 0; j < newMatriz[0].length; j++) {
 //                if (MatrizSort[i][j] > MatrizSort[i][j + 1]) {
 //                    int MatrizEspejo[][] = new int[i][j];
 //                    MatrizSort[i][j] = MatrizSort[i][j + 1];
@@ -48,8 +47,16 @@ public class Lab1P2_BryanArita {
             System.out.println("");
         }
     }
-    
-     public static void CalculoMedianas(int matriz[][]) {
+
+    public static void BubbleSort(int cont) {
+        for (int i = 0; i < newMatriz.length; i++) {
+            for (int j = 0; j < newMatriz[0].length; j++) {
+                if (newMatriz[cont][j]==newMatriz[cont][j+1])
+            }
+        }
+    }
+
+    public static void CalculoMedianas(int matriz[][]) {
         for (int i = 0; i < newMatriz.length; i++) {
             for (int j = 0; j < newMatriz.length; j++) {
                 if (j == ((newMatriz.length - 1) / 2)) {
@@ -57,13 +64,31 @@ public class Lab1P2_BryanArita {
                 }
             }
         }
-        System.out.println(ArregloMedianas);
     }
-     
-     public static void ArrayListOrdenado (ArrayList ArrList){
-         for
-     }
-     
+
+    public static void IMPArraylist(ArrayList arrayL) {
+        for (int i = 0; i < arrayL.size(); i++) {
+            System.out.print("[" + arrayL.get(i) + "] ");
+        }
+    }
+
+    public static void BubbleSortArraylist(ArrayList ArrList) {
+        int num = 0;
+        for (int i = 0; i < ArrList.size(); i++) {
+            if ((int) ArrList.get(i) < (int) ArrList.get(+1)) {
+
+            }
+        }
+    }
+
+    public static void MedianaDeLaMediana(ArrayList arrayL) {
+        for (int i = 0; i < arrayL.size(); i++) {
+            if (i == (arrayL.size() - 1) / 2) {
+                System.out.println("[" + arrayL.get(i) + "]");
+            }
+        }
+    }
+
     static int newMatriz[][]; //variable global para hacer mas facil el uso de los metodos
 
     public static void main(String[] args) {
@@ -75,10 +100,14 @@ public class Lab1P2_BryanArita {
             tamano = duki.nextInt();
         }
 
-         newMatriz= MatrizGenerada(tamano, tamano);
+        System.out.println("\nMatriz generada:");
+        newMatriz = MatrizGenerada(tamano, tamano);
 //        BubbleSort(newMatriz);
-        System.out.println("IDea: ");
         CalculoMedianas(newMatriz);
+        System.out.println("\nCalculo de Medianas:");
+        IMPArraylist(ArregloMedianas);
+        System.out.println("\n\nMediana de las Medianas");
+        MedianaDeLaMediana(ArregloMedianas);
     }
 
 }
