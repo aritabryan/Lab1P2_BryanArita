@@ -38,8 +38,6 @@ public class Lab1P2_BryanArita {
         }
         return BubbleSort(newMatriz, cont + 1);
     }
-    
-    
 
     public static void ImprimirBubble(int[][] matriz) {
         int temp[][] = new int[matriz.length][matriz[0].length];
@@ -68,12 +66,19 @@ public class Lab1P2_BryanArita {
         }
     }
 
-    public static void BubbleSortArraylist(ArrayList ArrList) {
-        int num = 0;
-        for (int i = 0; i < ArrList.size(); i++) {
-            if ((int) ArrList.get(i) < (int) ArrList.get(+1)) {
-
+    public static void BubbleSortArraylist(ArrayList<Integer> ArrList, int cont) {
+        int espejo = 0;
+        int espejo2 = 0;
+        if (cont < ArrList.size()) {
+            for (int i = 0; i < ArrList.size() - 1; i++) {
+                if (ArrList.get(i) > ArrList.get(i + 1)) {
+                    espejo = ArrList.get(i);
+                    espejo2 = ArrList.get(i + 1);
+                    espejo = ArrList.set(i, espejo2);
+                    espejo2 = ArrList.set(i, espejo);
+                }
             }
+            BubbleSortArraylist(ArrList, cont + 1);
         }
     }
 
@@ -99,10 +104,12 @@ public class Lab1P2_BryanArita {
         System.out.println("\nMatriz generada:");
         newMatriz = MatrizGenerada(tamano, tamano);
         System.out.println("\nMatriz Ordenada:");
-        ImprimirBubble(BubbleSort(newMatriz, 0));
+//        ImprimirBubble(BubbleSort(newMatriz, 0));
         CalculoMedianas(newMatriz);
         System.out.println("\nCalculo de Medianas:");
         IMPArraylist(ArregloMedianas);
+        System.out.println("\nArreglo de Medianas Calculados: ");
+        BubbleSortArraylist(ArregloMedianas, 0);
         System.out.println("\n\nMediana de las Medianas");
         MedianaDeLaMediana(ArregloMedianas);
     }
