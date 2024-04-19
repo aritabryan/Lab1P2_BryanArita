@@ -34,26 +34,32 @@ public class Lab1P2_BryanArita {
 //        }
 //        return BubbleSort(MatrizSort);
 //    }
-    public static void BubbleSort(int[][] matriz) {
-        int MatrizSort[][] = new int[matriz.length][matriz.length];
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
-                if (MatrizSort[i][j] > MatrizSort[i][j + 1]) {
-                    int MatrizEspejo[][] = new int[i][j];
-                    MatrizSort[i][j] = MatrizSort[i][j + 1];
-                    System.out.println("[" + MatrizSort + "] ");
-                }
-            }
-            System.out.println("");
-        }
-    }
+//    public static void BubbleSort(int[][] matriz) {
+//        int MatrizSort[][] = new int[matriz.length][matriz.length];
+//        for (int i = 0; i < matriz.length; i++) {
+//            for (int j = 0; j < matriz.length; j++) {
+//                if (MatrizSort[i][j] > MatrizSort[i][j + 1]) {
+//                    int MatrizEspejo[][] = new int[i][j];
+//                    MatrizSort[i][j] = MatrizSort[i][j + 1];
+//                    System.out.println("[" + MatrizSort + "] ");
+//                }
+//            }
+//            System.out.println("");
+//        }
+//    }
 
-    public static void BubbleSort(int cont) {
-        for (int i = 0; i < newMatriz.length; i++) {
-            for (int j = 0; j < newMatriz[0].length; j++) {
-                if (newMatriz[cont][j]==newMatriz[cont][j+1])
-            }
+    public static void BubbleSort2(int [][]matriz, int cont) {
+        int espejo=0;
+        int espejo2=0;
+            for (int j = 0; j < newMatriz.length-1; j++) {
+                if (newMatriz[cont][j]==newMatriz[cont][j+1]){
+                    espejo=newMatriz[cont][j];
+                    espejo2=newMatriz[cont][j+1];
+                    newMatriz[cont][j+1]=espejo;
+                    newMatriz[cont][j+1]=espejo2;
+                }
         }
+            BubbleSort2(newMatriz, cont+1);
     }
 
     public static void CalculoMedianas(int matriz[][]) {
@@ -102,7 +108,8 @@ public class Lab1P2_BryanArita {
 
         System.out.println("\nMatriz generada:");
         newMatriz = MatrizGenerada(tamano, tamano);
-//        BubbleSort(newMatriz);
+        System.out.println("\nMatriz Ordenada:");
+        BubbleSort2(newMatriz);
         CalculoMedianas(newMatriz);
         System.out.println("\nCalculo de Medianas:");
         IMPArraylist(ArregloMedianas);
