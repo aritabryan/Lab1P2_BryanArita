@@ -40,6 +40,23 @@ public class Lab1P2_BryanArita {
         BubbleSort(fila, cont + 1);
     }
 
+    public static void imprimirMatriz(int[][] matriz) {
+    for (int i = 0; i < matriz.length; i++) {
+        imprimirArreglo(matriz[i]);
+    }
+}
+
+public static void imprimirArreglo(int[] arreglo) {
+    System.out.print("[");
+    for (int i = 0; i < arreglo.length; i++) {
+        System.out.print(arreglo[i]);
+        if (i < arreglo.length - 1) {
+            System.out.print(", ");
+        }
+    }
+    System.out.println("]");
+}
+
     public static void ImprimirBubble(int[][] matriz) {
         int temp[][] = new int[matriz.length][matriz[0].length];
 
@@ -115,8 +132,7 @@ public class Lab1P2_BryanArita {
         System.out.println("\nMatriz generada:");
         newMatriz = MatrizGenerada(tamano, tamano);
         System.out.println("\nMatriz Ordenada:");
-
-        BubbleSort(fila, 0);
+//        BubbleSort(fila, 0);
         CalculoMedianas(newMatriz);
         System.out.println("\nCalculo de Medianas:");
         IMPArraylist(ArregloMedianas);
