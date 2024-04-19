@@ -23,7 +23,18 @@ public class Lab1P2_BryanArita {
         return temp;
     }
 
-    public static int[][] BubbleSort(int[][] matriz, int cont) {
+    public static void BubbleSort2(int[] arreglo, int cont) {
+        int espejo = 0;
+        int espejo2 = 0;
+        for (int i = 0; i < newMatriz.length - 1; i++) {
+            for (int j = 0; j < newMatriz[0].length - 1; j++) {
+
+            }
+        }
+
+    }
+
+    public static void BubbleSort(int[][] matriz, int cont) {
         int espejo = 0;
         int espejo2 = 0;
         for (int i = 0; i < newMatriz.length - 1; i++) {
@@ -36,7 +47,7 @@ public class Lab1P2_BryanArita {
                 }
             }
         }
-        return BubbleSort(newMatriz, cont + 1);
+        BubbleSort(newMatriz, cont + 1);
     }
 
     public static void ImprimirBubble(int[][] matriz) {
@@ -104,7 +115,7 @@ public class Lab1P2_BryanArita {
         System.out.println("\nMatriz generada:");
         newMatriz = MatrizGenerada(tamano, tamano);
         System.out.println("\nMatriz Ordenada:");
-//        ImprimirBubble(BubbleSort(newMatriz, 0));
+        BubbleSort(newMatriz, 0);
         CalculoMedianas(newMatriz);
         System.out.println("\nCalculo de Medianas:");
         IMPArraylist(ArregloMedianas);
